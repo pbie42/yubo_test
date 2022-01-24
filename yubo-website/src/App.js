@@ -22,13 +22,10 @@ function App() {
 					page: 1,
 				});
 
-				console.log('usersResult', usersResult.data.users);
 				setUsers(usersResult.data.users.data);
 				if (usersResult.data.users.pagination.lastPage) {
-					console.log('we in here get all users');
 					setLastPage(usersResult.data.users.pagination.lastPage);
 				}
-				console.log('users');
 			} catch (error) {
 				console.log(error);
 			}
@@ -48,7 +45,6 @@ function App() {
 			);
 			setUsers(usersResult.data.users.data);
 			if (usersResult.data.users.pagination.lastPage) {
-				console.log('we in here handleSearch');
 				setLastPage(usersResult.data.users.pagination.lastPage);
 			}
 		} catch (error) {
@@ -71,17 +67,14 @@ function App() {
 				usersResult = await axios.post(`http://localhost:5500/page`, {
 					page: value,
 				});
-			console.log('usersResult pagination', usersResult.data.users);
 			setUsers(usersResult.data.users.data);
 			if (usersResult.data.users.pagination.lastPage) {
-				console.log('we in here');
 				setLastPage(usersResult.data.users.pagination.lastPage);
 			}
 		} catch (error) {
 			console.log(error);
 		}
 	};
-	console.log('lastPage', lastPage);
 	return (
 		<div
 			className="App"

@@ -16,16 +16,12 @@ app.post('/page', async (req, res) => {
 });
 
 app.post('/users/', async (req, res) => {
-	console.log(req.body);
 	const result = await db.updateUser(req.body.user);
-	console.log('result', result);
-	res.status(200);
+	res.status(200).json({ result });
 });
 
 app.post('/users/search', async (req, res) => {
-	console.log(req.body);
 	const users = await db.searchUser(req.body.term, req.body.page);
-	console.log('users', users);
 	res.status(200).json({ users });
 });
 

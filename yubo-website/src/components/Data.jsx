@@ -6,22 +6,22 @@ import Button from '@mui/material/Button';
 const RenderDetailsButton = ({ params }) => {
 	const [isDeleted, setIsDeleted] = React.useState(params.row.isDeleted);
 	const handleClick = async () => {
-		console.log(params.row);
 		try {
 			const res = await axios.post(`http://localhost:5500/users`, {
 				user: params.row,
 			});
-			console.log('res', res);
+			setIsDeleted(!isDeleted);
 		} catch (error) {
 			console.log(error);
 		}
+		console.log('we are here');
 	};
 	return (
 		<strong>
 			{isDeleted ? (
-				<Button onClick={() => handleClick()}>Reactivate</Button>
+				<Button onClick={handleClick}>Reactivate</Button>
 			) : (
-				<Button onClick={() => handleClick()}>Remove</Button>
+				<Button onClick={handleClick}>Remove</Button>
 			)}
 		</strong>
 	);
