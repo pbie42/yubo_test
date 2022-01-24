@@ -1,6 +1,4 @@
-const knex = require('knex');
-
-const konnected = knex({
+const knex = require('knex')({
 	client: 'sqlite3',
 	connection: {
 		filename: 'db.sqlite',
@@ -13,4 +11,7 @@ const konnected = knex({
 	},
 });
 
-module.exports = konnected;
+const { attachPaginate } = require('knex-paginate');
+attachPaginate();
+
+module.exports = knex;

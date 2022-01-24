@@ -1,10 +1,6 @@
 {
-  "name": "yubo",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "workspaces": [
-    "yubo-front",
-    "yubo-server"
-  ]
+	"name": "yubo",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT"
 }
