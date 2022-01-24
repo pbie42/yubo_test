@@ -1,0 +1,16 @@
+{
+	"name": "yubo-server",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"dev": "nodemon server.js"
+	},
+	"dependencies": {
+		"@vscode/sqlite3": "^5.0.7",
+		"express": "^4.17.2",
+		"knex": "^1.0.1",
+		"nodemon": "^2.0.15",
+		"sqlite3": "^5.0.2"
+	}
+}
